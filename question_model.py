@@ -1,3 +1,4 @@
 class Question:
-    def __init__(self) -> None:
-        pass
+    def __init__(self, text, answer) -> None:
+        self.text = text
+        self.answer = answer
