@@ -44,3 +44,11 @@ def test_still_has_questions_returns_true():
     quiz = QuizBrain(question_list)
 
     assert quiz.still_has_questions() == True
+
+
+def test_still_has_questions_returns_true():
+    question_list = [MockQuestion("Question 1"), MockQuestion("Question 2")]
+    quiz = QuizBrain(question_list)
+    quiz.question_number = 2
+
+    assert quiz.still_has_questions() == False
