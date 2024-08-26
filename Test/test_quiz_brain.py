@@ -37,3 +37,10 @@ def test_correct_question_selected():
 
     # Assert
     assert quiz.question_list[quiz.question_number - 1].text == "Question 1"
+
+
+def test_still_has_questions_returns_true():
+    question_list = [MockQuestion("Question 1"), MockQuestion("Question 2")]
+    quiz = QuizBrain(question_list)
+
+    assert quiz.still_has_questions() == True
