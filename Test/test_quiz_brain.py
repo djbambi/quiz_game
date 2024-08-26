@@ -24,3 +24,16 @@ def test_question_number_increments():
         quiz.next_question()
 
     assert quiz.question_number == 1
+
+
+def test_correct_question_selected():
+    # Arrange
+    question_list = [MockQuestion("Question 1"), MockQuestion("Question 2")]
+    quiz = QuizBrain(question_list)
+
+    # Act
+    with patch('builtins.input', return_value="True"):  # Mock the input function
+        quiz.next_question()
+
+    # Assert
+    assert quiz.question_list[quiz.question_number - 1].text == "Question 1"
