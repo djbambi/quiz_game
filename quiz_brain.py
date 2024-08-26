@@ -20,3 +20,11 @@ class QuizBrain:
             self.score += 1
             return self.score, True
         return self.score, False
+
+    def print_update(self, score, answer_outcome):
+        if answer_outcome:
+            print('You got it right!')
+        else:
+            print('You got it wrong!')
+        print('The correct answer is: True')
+        print(f'Your current score is: {score}/{self.question_number}')
