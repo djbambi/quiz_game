@@ -12,6 +12,7 @@ for question in question_data:
 quiz = QuizBrain(question_bank)
 
 while quiz.still_has_questions():
-    user_answer, correct_answer = quiz.next_question()
-    score, answer_outcome = quiz.check_answer(user_answer, correct_answer)
-    quiz.print_update(score, answer_outcome, correct_answer)
+    current_question, current_answer = quiz.fetch_question_and_answer()
+    user_answer = quiz.ask_question(current_question)
+    score, answer_outcome = quiz.check_answer(user_answer, current_answer)
+    quiz.print_update(score, answer_outcome, current_answer)
